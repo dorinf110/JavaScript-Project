@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="common.js" defer></script>
+    <script src="homepage.js" defer></script>
+    
+<body>
+    <header>
+        <div id="cont_img">
+            <div id="div_img">
+            </div>
+        </div>
+        <div id="cont_items"> 
+            <div id="div_date">
+                <p id="time">Date: 07.07.2023 Time: 14:56</p>
+            </div>
+             <div id="div_title">
+                <h1 id="h1_title">Shift Builder</h1>
+            </div>
+            <div id="div_usr">
+                <p id="user_p">Hello,</p>
+            </div>
+        </div>
+        <div id="cont_btn">
+            <div id="div_btn_head">
+                <ul>
+                    <li><button class ="btn" id="edit_p">Profile</button></li>
+                    <li><button class="btn" id="search">Search</button></li>
+                    <li><button class="btn" id="logout">Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div id="inputs">
+         <div class="div_input_data" id="div_shifts">
+            <h2>New shift</h2>
+         <div class="cont_user_data">
+            <form action="homepage.html" method="post" id="shift_form">
+                <div class="input_hm">
+                    <label for="date" class="lab_hm">Date:</label>
+                    <input type="date", id="date", class="inp", placeholder="Enter the shift date!">
+                </div>
+                <div class="input_hm">
+                    <label for="sTime" class="lab_hm">Start time:</label>
+                    <input type="time", id="sTime", class="inp", placeholder="Enter the shift start time!">
+                </div>
+                <div class="input_hm">
+                    <label for="eTime" class="lab_hm">End time:</label>
+                    <input type="time", id="eTime", class="inp", placeholder="Enter the shift end time!">
+                </div>
+                <div class="input_hm">
+                    <label for="hWage" class="lab_hm">Hourly wage:</label>
+                    <input type="number", id="hWage", class="inp", step="0.01", placeholder="Enter the hourly wage!">
+                </div>
+                <div class="input_hm">
+                    <label for="place" class="lab_hm">Work place:</label>
+                    <select name="place" class="inp" id="place">
+                        <option value="Downtown">Downtown</option>
+                        <option value="Park">Park</option>
+                        <option value="Lake">Lake</option>
+                        <option value="Stadium">Stadium</option>
+                    </select>
+                </div>
+                <div class="input_hm">
+                    <label for="slug" class="lab_hm">Shift id:</label>
+                    <input type="text", id="slug", class="inp" readonly>
+                </div>
+                <div class="input_hm">
+                    <label for="comment" class="lab_hm">Comment:</label>
+                    <textarea rows="5" cols="40" id="comment" placeholder="Enter your comment here!" class="inp"></textarea>
+                </div>
+                <div id="div_add">
+                    <div id="adshft_btn">
+                        <button type="submit", id="addShift" class="btn">Add shift</button>
+                    </div>
+                    <div id="div_dshift">
+                        <button type="submit", id="delShift" class="btn hidden">Delete</button>
+                    </div>
+                    <!-- rounded progress indicator -->
+                    <div id="cont_prog" class="hidden">
+                        <div class="outer" >
+                            <div class="inner">
+                            </div>
+                        </div> 
+                    <p id="perc">0%</>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="div_input_data hidden" id="div_profile">
+        <h2>Edit profile</h2>
+        <div class="cont_user_data" id="cont_prof">
+        <form action="homepage.html" id="profile_form" method="post">
+            <div class="input_hm">
+                <label for="fname" class="lab_hm">Firstname:</label>
+                <input type="text", id="fname", class="inp">
+            </div>
+            <div class="input_hm">
+                <label for="lname" class="lab_hm">Lastname:</label>
+                <input type="text", id="lname", class="inp">
+            </div>
+            <div class="input_hm">
+                <label for="email" class="lab_hm">E-mail:</label>
+                <input type="email", id="email", class="inp">
+            </div>
+            <div class="input_hm">
+                <label for="age" class="lab_hm">Age:</label>
+                <input type="number", id="age", class="inp">
+            </div>
+            <div class="input_hm">
+                <label for="user" class="lab_hm">Username:</label>
+                <input type="text", id="user", class="inp" readonly>
+            </div>
+            <div class="input_hm">
+                <label for="passw" class="lab_hm">Password:</label>
+                <input type="password", id="passw", class="inp">
+            </div>
+            <div class="input_hm">
+                <label for="rpassw" class="lab_hm">Reenter password:</label>
+                <input type="password", id="rpassw", class="inp">
+            </div>
+            <button type="submit", class="btn" id="save_profile">Save</button>
+            <button type="cancel", class="btn" id="cancel_profile">Cancel</button>
+        </form>
+    </div>
+    </div>
+    <div class="div_input_data hidden" id="div_search">
+        <h2>Search shifts</h2>
+        <div class="cont_user_data">
+            <form action="homepage.html" id="search_form" method="post">
+            <div class="div_s">
+                <fieldset>
+                    <legend>Search By Date</legend>
+                    <div class="input_s">
+                        <label for="fdate" class="lab_hm">From date:</label>
+                        <input type="date", id="fdate", class="inp_s">
+                    </div>
+                    <div class="input_s">
+                        <label for="edate" class="lab_hm">To date:
+                            <input type="date", id="edate", class="inp_s">
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="div_s">
+                <fieldset>
+                    <legend>Search By Id</legend>
+                        <div class="input_s">
+                            <label for="shiftId" class="lab_hm">Shift ID:</label>
+                            <input type="text", id="shiftId", class="inp_s">
+                        </div>
+                   </fieldset>
+            </div>
+            <div class="div_s">       
+                <fieldset>
+                    <legend>Search type:</legend>
+                        <div class="radio">
+                            <input type="radio" name="sType" value="byDate" checked="true" id="byDate">Date
+                            <input type="radio" name="sType" value="byId"  id="byId">Id
+                        </div>
+                </fieldset> 
+            </div>
+            <div id="radio_btns">           
+                <button type="submit", class="btn btn_src" id="search_shift">Search</button>
+                <button type="cancel", class="btn btn_src" id="cancel_search">Cancel</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</div>
+<div id="div_table" class="hidden">
+    <table border="1" id="table">
+        <thead>
+            <tr>
+                <th>Date</th><th>Start time</th><th>End time</th><th>Hourly wage</th><th>Place</th><th>Shift ID</th><th>Total profit</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</div>
+
+<div id="profitable" class="hidden">
+</div> 
+</main>
+    <footer>
+        <div id="div_footer">
+            <p>Restaurant logo by NOVILAMISASTRA from <a href="https://thenounproject.com/browse/icons/term/restaurant-logo/" target="_blank" title="Restaurant logo Icons">Noun Project</a></p>
+        </div>
+    </footer>
+ </body>
+</html>

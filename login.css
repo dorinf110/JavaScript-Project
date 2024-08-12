@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+body{
+    background-image:linear-gradient(to bottom, rgba(188, 228, 245, 0.267), rgb(119, 167, 245)),url('img/back2.png');
+    background-repeat:no-repeat;
+    background-clip: border-box;
+    background-size:auto ;
+    height:100%;
+    }
+
+#cont_input{
+    margin: 15% auto;
+    background-color: rgb(217, 243, 248);
+    width:fit-content;
+    border: 2px solid blue;
+    padding: 2%;
+    box-shadow: 2px 2px 3px 3px #737373;
+    text-align: center;
+    border-radius: 5%;
+    /* font-size: 20px; */
+}
+
+#cont_input p{
+    margin-top: 20%;
+    font-style: italic;
+}
+
+.inp{
+    font-size: 16px;
+    margin-left: 3%;
+    padding: 1%;
+    float:right;
+}
+
+.input{
+margin-bottom: 10%;
+text-align: left;
+display: grid;
+}
+
+.inp:focus{
+    box-shadow: 1px 1px 3px 4px lightblue;
+}
+
+.bttn{
+    font-size: 18px;
+    padding: 1% 2% 2%;
+    border-radius: 30%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 3px 3px rgb(131, 131, 192);
+    background-color: rgb(21, 138, 158);
+    color: whitesmoke;
+    width: fit-content;
+    text-align: center;
+}
+
+.bttn:hover{
+    opacity: 0.8;
+}
+
+.lab{
+    margin-left: 2%;
+    font-size: 16px;
+    margin-bottom: 2%;
+    margin-top:2%;
+}
+.inp_error{
+    font-size: 16px;
+    margin-left: 3%;
+    box-shadow: 1px 1px 2px 3px red;
+    float:right;
+    padding: 1%;
+}
+
+.hidden{
+    display: none;
+}
+    
+
+#forg_pas:hover{
+    font-size:larger;
+    cursor:pointer ;
+}
+
+#cont_form {
+    text-align: center;
+    display: grid;
+}
+
+#save{
+    margin:auto;
+}

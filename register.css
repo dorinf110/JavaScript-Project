@@ -1,0 +1,21 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#regist{
+    font-size: 18px;
+    padding: 2%;
+    border-radius: 30%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 3px 3px rgb(131, 131, 192);
+    background-color: rgb(21, 138, 158);
+    color: whitesmoke;
+}
+
+#regist:hover{
+    opacity: 0.8;
+}

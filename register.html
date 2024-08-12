@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="common.js" defer></script>
+    <script src="register.js" defer></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div id="cont_input">
+    <form id="input_form" action="register.html" method="post">
+        <div class="input">
+           <label for="fname" class="lab">Firstname:</label>
+           <input type="text", id="fname", class="inp" placeholder="Enter your firstname!">
+        </div>
+        <div class="input">
+            <label for="lname" class="lab">Lastname:</label>
+            <input type="text", id="lname", class="inp", placeholder="Enter your lastname!">
+        </div>
+        <div class="input">
+            <label for="email" class="lab">E-mail:</label>
+            <input type="email", id="email", class="inp", placeholder="Enter your email!">
+        </div>
+        <div class="input">
+            <label for="age" class="lab">Age:</label>
+            <input type="number", id="age", class="inp", placeholder="Enter your age!", value="30">
+        </div>
+        <div class="input">
+            <label for="user" class="lab">Username:</label>
+            <input type="text", id="user", class="inp", placeholder="Enter your username!">
+        </div>
+        <div class="input">
+            <label for="passw" class="lab">Password:</label>
+            <input type="password", id="passw", class="inp", placeholder="Enter your password!">
+        </div>
+        <div class="input">
+            <label for="rpassw" class="lab">Retype password:</label>
+            <input type="password", id="rpassw", class="inp", placeholder="Retype your password!">
+        </div>
+        <button type="submit", id="regist">Register</button>
+    </form> 
+    </div>
+</body>
+</html>
